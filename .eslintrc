@@ -1,0 +1,87 @@
+{
+    "root": true,
+    "extends": ["eslint:recommended", "airbnb-typescript"],
+    "env": {
+        "es2020": true,
+        "node": true,
+        "jest": true
+    },
+    "plugins": ["no-only-tests", "prettier"],
+    "rules": {
+        "no-only-tests/no-only-tests": "error",
+        "prettier/prettier": "error"
+    },
+    "overrides": [
+        {
+            "files": ["*.ts", "*.tsx"],
+            // "excludedFiles": "*.test.*",
+            "plugins": ["@typescript-eslint", "no-only-tests", "prettier"],
+            "parser": "@typescript-eslint/parser",
+            "parserOptions": {
+                "project": "./tsconfig.json"
+            },
+            "extends": [
+                "plugin:@typescript-eslint/recommended",
+                "plugin:@typescript-eslint/recommended-requiring-type-checking",
+                "prettier"
+            ],
+            "rules": {
+                "no-process-env": "error",
+                "no-void": "off",
+                "import/prefer-default-export": "off",
+                "class-methods-use-this": "off",
+                "react/jsx-indent": "off",
+                "import/no-extraneous-dependencies": ["error", { "packageDir": [".", "./server/", "./ui/", "./dto/"] }],
+                "react/jsx-one-expression-per-line": "off",
+                "react/jsx-props-no-spreading": "off",
+                "@typescript-eslint/explicit-function-return-type": "off",
+                "@typescript-eslint/explicit-module-boundary-types": "off",
+                "@typescript-eslint/interface-name-prefix": "off",
+                "@typescript-eslint/no-floating-promises": "error",
+                "@typescript-eslint/no-use-before-define": "off",
+                "@typescript-eslint/no-unused-vars": "off",
+                "@typescript-eslint/no-misused-promises": ["error", { "checksVoidReturn": false }],
+                "no-console": "error",
+                "@typescript-eslint/naming-convention": [
+                    "error",
+                    { "selector": "default", "format": ["camelCase"] },
+                    { "selector": ["class", "typeAlias", "enum", "enumMember"], "format": ["PascalCase"] },
+                    {
+                        "selector": ["variable", "parameter", "classProperty"],
+                        "format": ["camelCase"],
+                        "leadingUnderscore": "allow"
+                    },
+                    {
+                        "selector": "variable",
+                        "modifiers": ["const", "global"],
+                        "types": ["boolean", "string", "number", "array"],
+                        "format": ["UPPER_CASE", "camelCase"]
+                    },
+                    { "selector": "variable", "modifiers": ["const", "global"], "format": ["camelCase", "PascalCase"] },
+                    {
+                        // interfaces should not be prefixed with I ("Hungarian Notation"). See https://stackoverflow.com/a/111972/11813
+                        "selector": "interface",
+                        "format": ["PascalCase"],
+                        "custom": {
+                            "regex": "^I[A-Z]",
+                            "match": false
+                        }
+                    },
+                    { "selector": ["memberLike", "parameter"], "format": ["camelCase"] },
+                    {
+                        "selector": "memberLike",
+                        "modifiers": ["private"],
+                        "format": ["camelCase"],
+                        "leadingUnderscore": "allow"
+                    },
+                    {
+                        "selector": "variable",
+                        "types": ["boolean"],
+                        "format": ["PascalCase"], // prefix is lowercase, so it's lowercase + PascalCase = camelCase
+                        "prefix": ["is", "should", "has", "can", "did", "will"]
+                    }
+                ]
+            }
+        }
+    ]
+}
