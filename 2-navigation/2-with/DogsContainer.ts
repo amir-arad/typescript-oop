@@ -1,8 +1,8 @@
 import { Dog } from "./Dog";
 
 export class DogsContainer {
-    private cats: Array<Dog> = [];
+    private dogs: Array<Dog> = [];
     getAnimals(): Array<Dog> {
-        return this.cats;
+        return this.dogs;
     }
 }

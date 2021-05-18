@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/amir-arad/typescript-oop#readme",
   "devDependencies": {
+    "@types/node": "^15.0.2",
     "eslint": "^7.23.0",
     "eslint-config-airbnb-typescript": "^12.3.1",
     "eslint-config-prettier": "^8.1.0",

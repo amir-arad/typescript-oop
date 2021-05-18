@@ -1,4 +1,4 @@
-import { AnimalsContainer } from './AnimalsContainer';
+import { IAnimalsContainer } from './AnimalsContainer';
 import { IDog } from './IDog';
 
-export interface IDogsContainer extends AnimalsContainer<IDog> {}
+export interface IDogsContainer extends IAnimalsContainer<IDog> {}
