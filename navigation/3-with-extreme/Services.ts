@@ -12,3 +12,9 @@ export const Services = () => ({
         },
     },
 });
+
+export function cat(name: string) {
+    const mew = () => console.log(`${name} says mew`);
+    return { mew };
+}
+export type Cat = ReturnType<typeof cat>;

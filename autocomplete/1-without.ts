@@ -1,11 +1,13 @@
 /*
     Don't break autocomplete & type checking
 
-    Exercise : how long will it take to spot the bug?
+    where is the bug?
 */
 
 function printInfo(arg: any): void {
     console.log(arg.png);
+    console.log(arg + 2);
+    console.log(Number.parseFloat(arg));
 }
 
 printInfo({ ping: 5 });

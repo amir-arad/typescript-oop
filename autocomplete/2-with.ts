@@ -4,6 +4,8 @@
 
 function printInfo(arg: { ping: number }): void {
     console.log(arg.png);
+    console.log(arg + 2);
+    console.log(Number.parseFloat(arg));
 }
 
 printInfo({ ping: 5 });

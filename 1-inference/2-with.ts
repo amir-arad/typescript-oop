@@ -1,5 +1,5 @@
 /*
-    Hover tips and generics cost less than verbose code
+    Inference and generics cost less than verbose code
 */
 
 function reduceBits(value: Array<boolean>) {
